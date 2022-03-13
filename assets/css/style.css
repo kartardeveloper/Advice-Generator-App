@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap");
+
+:root {
+  --dark-blue: hsl(218, 23%, 16%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --neon-green: hsl(150, 100%, 66%);
+  --light-cyan: hsl(193, 38%, 86%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--dark-blue);
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advice-wrapper {
+  max-width: 600px;
+  width: 95%;
+  background: var(--dark-grayish-blue);
+  padding: 40px 40px 65px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.advice-wrapper .advice-number {
+  color: var(--neon-green);
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding: 7px 0 24px;
+}
+
+.advice-text {
+  color: var(--light-cyan);
+  margin-bottom: 40px;
+}
+
+.divider,
+.divider img {
+  width: 100%;
+}
+
+.dice-wrapper {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--neon-green);
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.dice-wrapper:hover {
+  box-shadow: var(--neon-green) 0px -4px 16px, var(--neon-green) 0px 4px 24px,
+    var(--neon-green) 0px 2px 56px;
+}
+
+.dice {
+  transition: all 0.3s ease;
+}
+
+.dice-wrapper:hover .dice {
+  animation: animate 1s ease infinite alternate;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 100%;
+}
+
+.attribution {
+    padding: 12px 10px;
+    color: var(--light-cyan);
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--neon-green);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 425px) {
+    .advice-wrapper {
+        padding: 30px 30px 55px;
+      }
+}
